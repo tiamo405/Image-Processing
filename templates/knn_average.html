@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLA Image Processor</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .upload-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .upload-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload-section label,
+        .upload-section p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .upload-section input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+
+        .image-group {
+            margin-bottom: 20px;
+        }
+
+        .image-group label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .image-group img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header>
+        <h1>XLA Image Processor</h1>
+    </header> -->
+
+    <main>
+        <section class="upload-section">
+            <form action="" method="post" enctype="multipart/form-data">
+                <label for="imageUpload">Choose an image:</label>
+                <input type="file" name="image" id="imageUpload" accept="image/*">
+                <label for="k" style="display: inline-block; width: 150px;">Nhập số k:</label>
+                <input type="number" id="k" name="k" required style="display: inline-block;">
+                <button class="btn btn-primary" type="submit">Upload</button>
+                
+            </form>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for m in messages %}
+                            <p>{{ m }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <a class="btn btn-primary" href="/">Back</a>
+        </section>
+
+        <section class="image-display">
+            <div class="images">
+                {% if originalImage %}
+                    <div class="image-group">
+                        <label for="originalImage">Ảnh gốc</label>
+                        <img src="data:image/jpeg;base64,{{ originalImage }}" alt="Original Image">
+                    </div>
+                {% endif %}
+
+                {% if processedImage %}
+                    <div class="image-group">
+                        <label for="processedImage">Ảnh đã xử lý</label>
+                        <img src="data:image/jpeg;base64,{{ processedImage }}" alt="Processed Image">
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+    <script src="your-script.js"></script>
+</body>
+
+</html>

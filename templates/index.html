@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing Menu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* .container {
+            width: 80%;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+
+        label {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            text-align: center;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        } */
+        
+        .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.group {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.group label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.group a {
+    display: block;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.group a:hover {
+    background-color: #2980b9;
+}
+
+
+        .btn {
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            box-sizing: border-box;
+            margin: 10px 0;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-success {
+            background: #2ecc71;
+        }
+
+        .btn-primary {
+            background: #3498db;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="group">
+            <label>Toán tử điểm ảnh</label>
+            <a class="btn btn-primary" href="/negative">Biến đổi âm bản</a>
+            <a class="btn btn-primary" href="/threshold">Threshold</a>
+            <a class="btn btn-primary" href="/logarith">Biến đổi Logarit</a>
+            <a class="btn btn-primary" href="/gamma">Biến đổi hàm mũ</a>
+            <a class="btn btn-primary" href="/balance">Cân bằng lược đồ xám</a>
+        </div>
+        <div class="group">
+            <label>Bộ lọc</label>
+            <a class="btn btn-primary" href="/weighted_average">Bộ lọc trung bình có trọng số</a>
+            <a class="btn btn-primary" href="/median">Bộ lọc trung vị</a>
+            <a class="btn btn-primary" href="/knn_average">Bộ lọc trung bình K giá trị gần nhất</a>
+        </div>
+        <div class="group">
+            <label>Phát hiện biên</label>
+            <a class="btn btn-primary" href="/roberts">Toán tử Roberts</a>
+            <a class="btn btn-primary" href="/sobel">Toán tử Sobel</a>
+            <a class="btn btn-primary" href="/prewitt">Toán tử Prewitt</a>
+            <a class="btn btn-primary" href="/laplacian">Toán tử Laplacian</a>
+            <a class="btn btn-primary" href="/canny">Phương pháp Canny</a>
+            <a class="btn btn-primary" href="/otsu">Thuật toán OTSU</a>
+        </div>
+        <div class="group">
+            <label>Nén ảnh</label>
+            <a class="btn btn-primary" href="/rlc">Nén ảnh sử dụng RLC</a>
+            <a class="btn btn-primary" href="/huffman">Nén ảnh sử dụng Huffman</a>
+            <a class="btn btn-primary" href="/lzw">Nén ảnh sử dụng LZW</a>
+        </div>
+        <div class="group">
+            <label>Xử lí hình thái</label>
+            <a class="btn btn-primary" href="/erosion">Co ảnh</a>
+            <a class="btn btn-primary" href="/dilation">Giãn ảnh</a>
+            <a class="btn btn-primary" href="/opening">Mờ ảnh</a>
+            <a class="btn btn-primary" href="/closing">Đóng ảnh</a>
+        </div>
+    </div>
+</body>
+
+</html>
