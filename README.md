@@ -1,1 +1,6 @@
-# Code clone Tiến Nam
+# Code by trần Phương Nam
+
+# Run code
+```sh
+python app.py
+```
